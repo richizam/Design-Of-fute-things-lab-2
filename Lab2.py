@@ -18,7 +18,6 @@ while True:
     if len(contours) > 0:
         c = max(contours, key=cv2.contourArea)
         x, y, w, h = cv2.boundingRect(c)
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
         center = (int(x + w / 2), int(y + h / 2))
         radius = int(min(w, h) / 2)
         cv2.circle(frame, center, radius, (0, 0, 255), 2)
